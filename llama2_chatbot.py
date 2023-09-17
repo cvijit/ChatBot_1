@@ -23,7 +23,8 @@ def extract_text_from_pdf(uploaded_file):
 # ...
 
 # User-provided prompt
-if prompt := st.chat_input(disabled=not replicate_api):
+prompt = st.chat_input(disabled=not replicate_api)
+if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.write(prompt)
@@ -37,7 +38,7 @@ if 'file' in st.session_state and st.session_state.file.type == 'application/pdf
         st.session_state.messages.append({"role": "user", "content": pdf_text})
         st.session_state.file = None  # Clear the uploaded file to avoid reprocessing
 
-# Generate a new response if last message is not from assistant
+# Generate a new response if the last message is not from the assistant
 if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
