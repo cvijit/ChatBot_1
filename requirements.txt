@@ -1,4 +1,4 @@
 streamlit==1.26.0
 PyPDF2==1.26.0
-replicate==0.3.0
+replicate==0.13.0
 spacy==2.3.7  # spaCy version compatible with Python 3.6
