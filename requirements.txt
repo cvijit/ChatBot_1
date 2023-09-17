@@ -1,4 +1,4 @@
-streamlit
-replicate
-PyPDF2
-spacy
+streamlit==0.90.1
+PyPDF2==1.26.0
+replicate==0.3.0
+spacy==2.3.7  # spaCy version compatible with Python 3.6
